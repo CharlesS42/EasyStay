@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapSearch">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,17 +19,17 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Will have map here"
-            android:layout_marginTop="90dp"
-            android:layout_marginBottom="90dp"
-            android:layout_marginStart="140dp"/>
+        <fragment
+            android:id="@+id/map_fragment"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="16dp"
+            tools:layout="@layout/activity_map_search" />
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="1dp"
             android:orientation="horizontal"
             android:layout_marginStart="50dp"
             android:layout_marginTop="70dp">
@@ -51,32 +50,35 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:orientation="horizontal"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="70dp">
+            android:layout_marginTop="70dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="22dp"
-                android:text="No. of rooms: "/>
+                android:text="No. of rooms: " />
+
             <EditText
                 android:id="@+id/edRoom"
-                android:text="1"
-                android:layout_width="40dp"
-                android:layout_height="50dp"/>
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:text="1" />
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginEnd="22dp"
-                android:text="Price: "/>
+                android:text="Price: " />
+
             <TextView
                 android:id="@+id/txtPrice"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="$0.00"/>
+                android:text="$0.00" />
 
         </LinearLayout>
 
@@ -91,4 +93,4 @@
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

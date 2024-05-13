@@ -32,10 +32,13 @@
           android:layout_height="wrap_content"
           android:layout_marginEnd="20dp"
           android:text="Card number: "/>
+
       <EditText
           android:id="@+id/edCardNumber"
           android:layout_width="200dp"
-          android:layout_height="wrap_content"/>
+          android:layout_height="wrap_content"
+          android:hint="Enter card number"
+          android:minHeight="48dp" />
 
     </LinearLayout>
 
@@ -51,10 +54,13 @@
           android:layout_height="wrap_content"
           android:layout_marginEnd="22dp"
           android:text="Card holder: "/>
+
       <EditText
           android:id="@+id/edPassword"
           android:layout_width="200dp"
-          android:layout_height="wrap_content"/>
+          android:layout_height="wrap_content"
+          android:hint="Enter card holder's name"
+          />
 
     </LinearLayout>
 
@@ -70,10 +76,13 @@
           android:layout_height="wrap_content"
           android:layout_marginEnd="22dp"
           android:text="Expiration date: "/>
+
       <EditText
           android:id="@+id/edExpiration"
           android:layout_width="200dp"
-          android:layout_height="wrap_content"/>
+          android:layout_height="wrap_content"
+          android:minHeight="48dp"
+          tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
 
@@ -89,10 +98,13 @@
           android:layout_height="wrap_content"
           android:layout_marginEnd="22dp"
           android:text="Security code: "/>
+
       <EditText
           android:id="@+id/edCode"
           android:layout_width="200dp"
-          android:layout_height="wrap_content"/>
+          android:layout_height="wrap_content"
+          android:hint="Enter security code"
+          android:minHeight="48dp" />
 
     </LinearLayout>
 
