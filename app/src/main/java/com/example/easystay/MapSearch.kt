@@ -23,13 +23,16 @@ class MapSearch : AppCompatActivity() {
 
         findViewById<TextView>(R.id.txtGreeting).setText(greeting)
 
-        val btnHotelSelect = findViewById<Button>(R.id.btnSave)
+        val btnSave = findViewById<Button>(R.id.btnSave)
+        val edBoxRoom = findViewById<EditText>(R.id.edRoom)
+        val txtPrice = findViewById<TextView>(R.id.txtPrice)
 
-        btnHotelSelect.setOnClickListener {
+
+        btnSave.setOnClickListener {
             var deliveryStr: String = "Default user"
             deliveryStr = (findViewById<EditText>(R.id.edAddress).text.toString() + ", "
-                    + findViewById<EditText>(R.id.edRoom).text.toString() + ", "
-                    + findViewById<EditText>(R.id.txtPrice).text.toString()
+                    + edBoxRoom.text.toString() + ", "
+                    + txtPrice.text.toString()
                     )
 
             val intent01 = Intent(applicationContext, Reservations::class.java)
@@ -37,12 +40,9 @@ class MapSearch : AppCompatActivity() {
             startActivity(intent01)
         }
 
-        val btnSave = findViewById<Button>(R.id.btnSave)
         btnSave.setOnClickListener {
             // Get the number of rooms and the final price from the views
-            val edRoom = findViewById<EditText>(R.id.edRoom)
-            val txtPrice = findViewById<TextView>(R.id.txtPrice)
-            val numberOfRooms = edRoom.text.toString()
+            val numberOfRooms = edBoxRoom.text.toString()
             val finalPrice = txtPrice.text.toString()
 
             // Create a new document
