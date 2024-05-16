@@ -56,7 +56,7 @@
           android:text="Card holder: "/>
 
       <EditText
-          android:id="@+id/edPassword"
+          android:id="@+id/edCardHolder"
           android:layout_width="200dp"
           android:layout_height="wrap_content"
           android:hint="Enter card holder's name"

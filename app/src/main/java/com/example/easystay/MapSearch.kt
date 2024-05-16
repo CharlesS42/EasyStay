@@ -35,47 +35,9 @@ class MapSearch : AppCompatActivity() {
                     + txtPrice.text.toString()
                     )
 
-            val intent01 = Intent(applicationContext, Reservations::class.java)
+            val intent02 = Intent(applicationContext, Reservations::class.java)
             intent.putExtra("message key 02", deliveryStr)
-            startActivity(intent01)
-        }
-
-        btnSave.setOnClickListener {
-            // Get the number of rooms and the final price from the views
-            val numberOfRooms = edBoxRoom.text.toString()
-            val finalPrice = txtPrice.text.toString()
-
-            // Create a new document
-            val document = PdfDocument()
-
-            // Create a PageInfo object
-            val pageInfo = PdfDocument.PageInfo.Builder(595, 842, 1).create()
-
-            // Start a page
-            val page = document.startPage(pageInfo)
-
-            // Get the Canvas object from the page and use it to draw
-            val canvas: Canvas = page.canvas
-            val paint = Paint()
-            paint.textSize = 14f
-            canvas.drawText("Confirmation: You have saved your selection to the hotel.", 20f, 50f, paint)
-            canvas.drawText("Number of rooms: $numberOfRooms", 20f, 70f, paint)
-            canvas.drawText("Final price: $finalPrice", 20f, 90f, paint)
-
-            // Finish the page
-            document.finishPage(page)
-
-            // Write the document contents to a file
-            val filePath = getExternalFilesDir(null)?.absolutePath + "/confirmation.pdf"
-            try {
-                val fos = FileOutputStream(filePath)
-                document.writeTo(fos)
-            } catch (e: IOException) {
-                e.printStackTrace()
-            }
-
-            // Close the document
-            document.close()
+            startActivity(intent02)
         }
     }
 }
